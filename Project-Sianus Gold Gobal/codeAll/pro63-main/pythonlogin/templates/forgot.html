@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Forgot password</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='test2.css') }}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+	</head>
+	<body>
+		<div class="register">
+			<h1>Forgot password</h1>
+			<div class="links">
+				<a href="{{ url_for('login') }}">Login</a>
+                <a href="{{ url_for('register') }}">Register</a>
+                <a href="{{ url_for('forgot') }}" class="active">Forgot password</a>
+			</div>
+			<form action="{{ url_for('forgot') }}" method="post" autocomplete="off">
+				<label for="username">
+					<i class="fas fa-user"></i>
+				</label>
+				<input type="text" name="username" placeholder="Username" id="username" required>
+				<label for="password">
+					<i class="fas fa-lock"></i>
+				</label>
+				<input type="password" name="new_password" placeholder="New Password" id="password" required>
+				<label for="confirm_password">
+					<i class="fas fa-lock"></i>
+				</label>
+				<input type="password" name="confirm_password" placeholder="Confirm Password" id="password" required>
+				</label>
+				<label for="code_repassword">
+					<i class="fas fa-lock"></i>
+				</label>
+				<input type="password" name="code_repassword" placeholder="Code Repassword" id="password" required>
+				</label>
+				<div class="msg">{{ msg[0] }}</div>
+				<div class="msg">{{ msg[1] }}</div>
+				<input type="submit" value="Confirm">
+			</form>
+		</div>
+	</body>
+</html>
